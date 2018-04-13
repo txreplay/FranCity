@@ -28,10 +28,6 @@ states:
     path: /states
     controller: App\Controller\FrontController::states
 
-state:
-    path: /states/{state_id}
-    controller: App\Controller\FrontController::state
-
 # OTHERS
 
 search:
