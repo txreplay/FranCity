@@ -1,3 +1,39 @@
-index:
-    path: /
-    controller: App\Controller\FrontController::index
+# CITY
+
+cities:
+    path: /cities
+    controller: App\Controller\FrontController::cities
+
+city:
+    path: /city/{city_id}
+    controller: App\Controller\FrontController::city
+
+cityRandom:
+    path: /city/random
+    controller: App\Controller\FrontController::cityRandom
+
+# COUNTY
+
+counties:
+    path: /counties
+    controller: App\Controller\FrontController::counties
+
+county:
+    path: /county/{county_id}
+    controller: App\Controller\FrontController::county
+
+# STATE
+
+states:
+    path: /states
+    controller: App\Controller\FrontController::states
+
+state:
+    path: /states/{state_id}
+    controller: App\Controller\FrontController::state
+
+# OTHERS
+
+search:
+    path: /search/{query}
+    controller: App\Controller\FrontController::search
