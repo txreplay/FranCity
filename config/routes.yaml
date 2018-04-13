@@ -12,16 +12,6 @@ cityRandom:
     path: /city/random
     controller: App\Controller\FrontController::cityRandom
 
-# COUNTY
-
-counties:
-    path: /counties
-    controller: App\Controller\FrontController::counties
-
-county:
-    path: /county/{county_id}
-    controller: App\Controller\FrontController::county
-
 # STATE
 
 states:
