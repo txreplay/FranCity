@@ -23,25 +23,13 @@ class FrontController extends Controller
         return new JsonResponse(['status' => 'OK']);
     }
 
-    public function counties() {
-        return new JsonResponse(['status' => 'OK']);
-    }
-
-    public function county($county_id) {
-        return new JsonResponse(['status' => 'OK']);
-    }
 
     public function states() {
-        return new JsonResponse(['status' => 'OK']);
-    }
-
-    public function state($state_id) {
         return new JsonResponse(['status' => 'OK']);
     }
 
     public function search($query) {
         return new JsonResponse(['status' => 'OK']);
     }
-
 
 }
