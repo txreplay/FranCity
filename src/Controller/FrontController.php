@@ -13,14 +13,3 @@ class FrontController extends Controller
         return new Response('Homepage');
     }
 }
-
-
-
-
-
-
-
-
-
-
-
