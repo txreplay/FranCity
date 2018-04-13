@@ -4,10 +4,6 @@ cities:
     path: /cities
     controller: App\Controller\FrontController::cities
 
-city:
-    path: /city/{city_id}
-    controller: App\Controller\FrontController::city
-
 cityRandom:
     path: /city/random
     controller: App\Controller\FrontController::cityRandom

@@ -2,33 +2,40 @@
 
 namespace App\Controller;
 
+use App\Service\DataService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class FrontController extends Controller
 {
 
-    public function cities()
+    public function __construct(DataService $dataService)
     {
-        return new JsonResponse(['city' => 100], 200, ['Access-Control-Allow-Origin' => '*']);
+        $this->dataService  = $dataService;
     }
 
-    public function city($city_id)
+    public function serializeShit($data) {
+        $serializer = $this->get('serializer');
+        $serialized = $serializer->serialize($data,'json');
+        $response = new Response($serialized);
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+
+        return $response;
+    }
+
+    public function cities()
     {
-        return new JsonResponse(['population' => 100, 'city' => 'Paris', 'state' => 'Ile-de-France'], 200, ['Access-Control-Allow-Origin' => '*']);
+        $response = $this->dataService->getCities();
+
+        return $this->serializeShit($response) ;
     }
 
     public function cityRandom()
     {
-        return new JsonResponse(['population' => 100, 'city' => 'Paris', 'state' => 'Ile-de-France'], 200, ['Access-Control-Allow-Origin' => '*']);
-    }
+        $response = $this->dataService->getRandomCity();
 
-    public function states() {
-        return new JsonResponse(['status' => 100], 200, ['Access-Control-Allow-Origin' => '*']);
+        return $this->serializeShit($response) ;
     }
-
-    public function search($query) {
-        return new JsonResponse(['status' => 100], 200, ['Access-Control-Allow-Origin' => '*']);
-    }
-
 }
