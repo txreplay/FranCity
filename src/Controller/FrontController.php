@@ -10,37 +10,37 @@ class FrontController extends Controller
 
     public function cities()
     {
-        return new JsonResponse();
+        return new JsonResponse(['status' => 'OK']);
     }
 
     public function city($city_id)
     {
-        return new JsonResponse();
+        return new JsonResponse(['status' => 'OK']);
     }
 
     public function cityRandom()
     {
-        return new JsonResponse();
+        return new JsonResponse(['status' => 'OK']);
     }
 
     public function counties() {
-        return new JsonResponse();
+        return new JsonResponse(['status' => 'OK']);
     }
 
     public function county($county_id) {
-        return new JsonResponse();
+        return new JsonResponse(['status' => 'OK']);
     }
 
     public function states() {
-        return new JsonResponse();
+        return new JsonResponse(['status' => 'OK']);
     }
 
     public function state($state_id) {
-        return new JsonResponse();
+        return new JsonResponse(['status' => 'OK']);
     }
 
     public function search($query) {
-        return new JsonResponse();
+        return new JsonResponse(['status' => 'OK']);
     }
 
 
