@@ -10,26 +10,25 @@ class FrontController extends Controller
 
     public function cities()
     {
-        return new JsonResponse(['status' => 'OK']);
+        return new JsonResponse(['city' => 100], 200, ['Access-Control-Allow-Origin' => '*']);
     }
 
     public function city($city_id)
     {
-        return new JsonResponse(['status' => 'OK']);
+        return new JsonResponse(['population' => 100, 'city' => 'Paris', 'state' => 'Ile-de-France'], 200, ['Access-Control-Allow-Origin' => '*']);
     }
 
     public function cityRandom()
     {
-        return new JsonResponse(['status' => 'OK']);
+        return new JsonResponse(['population' => 100, 'city' => 'Paris', 'state' => 'Ile-de-France'], 200, ['Access-Control-Allow-Origin' => '*']);
     }
 
-
     public function states() {
-        return new JsonResponse(['status' => 'OK']);
+        return new JsonResponse(['status' => 100], 200, ['Access-Control-Allow-Origin' => '*']);
     }
 
     public function search($query) {
-        return new JsonResponse(['status' => 'OK']);
+        return new JsonResponse(['status' => 100], 200, ['Access-Control-Allow-Origin' => '*']);
     }
 
 }
