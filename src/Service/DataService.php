@@ -36,4 +36,17 @@ class DataService
 
         return $return;
     }
+
+    public function getRandomCityGreaterThan($population)
+    {
+        $qb = $this->em->createQueryBuilder();
+
+        $q = $qb->select(['c'])
+            ->from(Cities::class, 'c')
+            ->where($qb->expr()->gt('c.population', $population))
+            ->orderBy('c.population')
+            ->getQuery();
+
+        return $q->getResult();
+    }
 }
